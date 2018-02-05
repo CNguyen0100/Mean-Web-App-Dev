@@ -13,12 +13,15 @@ router.route('/posts')
 
 router.route('/posts/:id')
   .get(function(req,res){
+    res.send({message: 'TODO get'});
 
   })
   .put(function(req,res){
+    res.send({message: 'TODO put all post'});
 
   })
   .delete(function(req,res){
+    res.send({message: 'TODO delete all post'});
 
   });
 
