@@ -6,6 +6,8 @@ const compress = require('compression');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
 
 // Define the Express configuration method
 module.exports = function() {
@@ -36,6 +38,13 @@ module.exports = function() {
 	// Set the application view engine and 'views' folder
 	app.set('views', './app/views');
 	app.set('view engine', 'ejs');
+
+	// Configure the flash messages middleware
+	app.use(flash());
+
+	// Configure the Passport middleware
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 	// Load the routing files
 	require('../app/routes/index.server.routes.js')(app);
