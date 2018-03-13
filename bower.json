@@ -6,5 +6,9 @@
     "Cuong Nguyen"
   ],
   "license": "MIT",
-  "homepage": ""
+  "homepage": "",
+  "dependencies": {
+    "angular-route": "^1.6.9",
+    "angular": "^1.6.9"
+  }
 }
