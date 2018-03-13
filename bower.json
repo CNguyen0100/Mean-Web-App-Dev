@@ -1,0 +1,10 @@
+{
+  "name": "web",
+  "description": "a Sample mean web",
+  "main": "",
+  "authors": [
+    "Cuong Nguyen"
+  ],
+  "license": "MIT",
+  "homepage": ""
+}
