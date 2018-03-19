@@ -1,0 +1,14 @@
+{
+  "name": "web",
+  "description": "a Sample mean web",
+  "main": "",
+  "authors": [
+    "Cuong Nguyen"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular-route": "^1.6.9",
+    "angular": "^1.6.9"
+  }
+}

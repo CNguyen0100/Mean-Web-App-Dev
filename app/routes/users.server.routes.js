@@ -4,12 +4,12 @@ const passport = require('passport');
 
 // Define the routes module' method
 module.exports = function(app) {
-	// Set up the 'signup' routes 
+	// Set up the 'signup' routes
 	app.route('/signup')
 	   .get(users.renderSignup)
 	   .post(users.signup);
 
-	// Set up the 'signin' routes 
+	// Set up the 'signin' routes
 	app.route('/signin')
 	   .get(users.renderSignin)
 	   .post(passport.authenticate('local', {
@@ -18,7 +18,7 @@ module.exports = function(app) {
 			failureFlash: true
 	   }));
 
-	// Set up the Facebook OAuth routes 
+	// Set up the Facebook OAuth routes
 	app.get('/oauth/facebook', passport.authenticate('facebook', {
 		scope: ['email'],
         successRedirect: '/',
@@ -30,14 +30,12 @@ module.exports = function(app) {
 	}));
 
 
-	// Set up the Google OAuth routes 
+	// Set up the Google OAuth routes
 	app.get('/oauth/google', passport.authenticate('google', {
-		scope: [
-			'https://www.googleapis.com/auth/userinfo.profile',
-			'https://www.googleapis.com/auth/userinfo.email'
-		],
+		scope: ['profile', 'email'],
 		failureRedirect: '/signin'
 	}));
+
 	app.get('/oauth/google/callback', passport.authenticate('google', {
 		failureRedirect: '/signin',
 		successRedirect: '/'
