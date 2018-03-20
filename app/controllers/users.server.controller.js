@@ -119,9 +119,9 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
 
 				// Find a unique available username
 				User.findUniqueUsername(possibleUsername, null, (availableUsername) => {
-					// Set the available user name 
+					// Set the available user name
 					profile.username = availableUsername;
-					
+
 					// Create the user
 					user = new User(profile);
 
