@@ -1,2 +1,2 @@
-console.log("loaded example");
+console.log("example is loaded")
 angular.module('example',[]);

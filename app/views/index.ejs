@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org">
+<html lang="en" ng-app="meanApp">
 <head>
 	<!-- Use the 'title' property to render a page title  -->
 	<title><%= title %></title>
-	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
-
-	<script src="lib/jquery/dist/jquery.js"></script>
-	<script src="lib/popper.js/dist/umd/popper.min.js"></script>
-	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- <script src="lib/angular/angular.min.js"></script> -->
-
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
-	<div class="container-fluid pt-1 pb-3 pl-0 pr-0">
+<body >
+	<!-- Nav bar -->
+	 <div class="container-fluid pt-1 pb-3 pl-0 pr-0">
 		<nav class="navbar navbar-light bg-dark">
 			<a class="navbar-brand text-white" href="#">
 				<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
@@ -49,18 +44,16 @@
 
 		</nav>
 	</div>
-	<section ng-view></section>
 
-		<!-- Render AngularJS views  -->
+	<!-- Render AngularJS views  -->
+	<div ng-view></div>
+
 	<script type="text/javascript">
-
 		window.user= <%- user || 'null'%>;
 		console.log(window);
 	</script>
 
 	<!-- load example view -->
-	<section ng-include="'example/views/example.client.view.html'"></section>
-
 	<div class="col">
 		<div class=" row justify-content-center">
 			<p>Login or Register with:</p>
@@ -71,17 +64,26 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+	<script src="/lib/jquery/dist/jquery.js"></script>
+	<script src="/lib/popper.js/dist/umd/popper.min.js"></script>
+	<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- Load local libraries -->
-	<script type="text/javascript" src="/lib/angular/angular.js"></script>
-	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular-route/angular-route.js"></script>
+	<script src="/application.js"></script>
+	<script src="/lib/angular-resource/angular-resource.js"></script>
+
+	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
+	<script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+	<script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+	<script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
 	<!-- Load the example module -->
 	<script type="text/javascript" src="/example/example.client.module.js"></script>
 	<script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+	<script type="text/javascript" src="/example/config/example.client.routes.js"></script>
+
 	<script type="text/javascript" src="/users/users.client.module.js"></script>
 	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
-	<!-- bootstrap angularjs application -->
-	<script type="text/javascript" src="/application.js"></script>
 </body>
 </html>
 
