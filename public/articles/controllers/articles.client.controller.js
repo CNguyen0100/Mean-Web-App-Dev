@@ -23,7 +23,7 @@ function($scope, $routeParams,$location,Authentication,Articles){
 
     $scope.findOne= function(){
       $scope.article = Articles.get({
-        articlesId: $routeParams.articleId
+        articleId: $routeParams.articleId
       });
     };
 
